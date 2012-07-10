@@ -1,0 +1,18 @@
+require 'yaml'
+provides "app_load"
+
+<% if node["os"] == "linux" %>
+YAML::ENGINE.yamler = 'syck'
+<% end %>
+
+file_path = "/etc/chef/conf_data.yaml"
+if File.exist?(file_path)
+	config = YAML.load_file("/etc/chef/conf_data.yaml")
+
+config.each do |name,key|
+  key.each do |child,value|
+    self[name] = Mash.new unless self[name]
+    self[name][child] = value
+  end
+end
+end
