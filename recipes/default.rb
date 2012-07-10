@@ -13,7 +13,7 @@ end
 
 node["ohai"]["plugins"].each do |file|
   template "/etc/chef/plugins/#{file}" do
-    source "#{file}.erb"
+    source "plugins/#{file}.erb"
   end
 end
 
