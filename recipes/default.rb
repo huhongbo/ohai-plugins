@@ -17,6 +17,11 @@ node["ohai"]["plugins"].each do |file|
   end
 end
 
+remote_directory "/etc/chef/plugins" do
+  source "plugins"
+  recursive true
+end
+
 
 
 
