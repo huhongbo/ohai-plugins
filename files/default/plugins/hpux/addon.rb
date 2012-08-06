@@ -1,3 +1,5 @@
+#hpux
+#v0.01
 provides "addon"
 require_plugin "network"
 require_plugin "dmi"

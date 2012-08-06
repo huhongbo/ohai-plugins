@@ -1,3 +1,5 @@
+# aix
+#v 0.02
 provides "addon"
 require_plugin "network"
 require_plugin "dmi"
